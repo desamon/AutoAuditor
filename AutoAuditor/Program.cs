@@ -13,8 +13,8 @@ namespace AutoAuditor
 
         static void Test()
         {
-            var filePath = "E:/Work/Visual Studio Projects/AutoAuditor/testXml.xml";
-            var service = new Service(null, filePath);
+            var filePathKek = "E:/Work/Visual Studio Projects/AutoAuditor/testXml.xml";
+            var service = new Service(null, filePathKek);
             service.Start();
         }
     }
