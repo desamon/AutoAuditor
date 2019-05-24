@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D105F2A-531D-45B5-856A-E4DE1B2EB29F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoAuditorFM</RootNamespace>
+    <AssemblyName>AutoAuditorFM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Impl\Context\CalculationContext.cs" />
+    <Compile Include="Impl\Enums\AnswerLvl.cs" />
+    <Compile Include="Impl\Enums\CategorieLvl.cs" />
+    <Compile Include="Impl\Extensions\Extensions.cs" />
+    <Compile Include="Impl\Extensions\Linguistic.cs" />
+    <Compile Include="Impl\Models\QuestionResult.cs" />
+    <Compile Include="Impl\Models\FinalModel.cs" />
+    <Compile Include="Impl\Models\LinguisticValue.cs" />
+    <Compile Include="Impl\Models\Result.cs" />
+    <Compile Include="Impl\Service.cs" />
+    <Compile Include="Impl\ServiceConfigModule.cs" />
+    <Compile Include="Impl\ServiceFactory.cs" />
+    <Compile Include="Interface\IContext.cs" />
+    <Compile Include="Interface\IService.cs" />
+    <Compile Include="Interface\IServiceFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoggerFM\LoggerFM.csproj">
+      <Project>{f1c32f0f-a772-43dd-bea9-5ac71b11e123}</Project>
+      <Name>LoggerFM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParsingFM\ParsingFM.csproj">
+      <Project>{0b64e7e5-7aef-4096-bb72-da17a1eac2e7}</Project>
+      <Name>ParsingFM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

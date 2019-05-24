@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<title name="TitleName">
+		<criterion name="CriterionName" categorieLvl="Critical">
+			<question>
+				<textQuestion categorieLvl="Critical">Question</textQuestion>
+				<answer result="Perfect">Answer0</answer>
+			</question>
+			<question>
+				<textQuestion categorieLvl="Important">Question2</textQuestion>
+				<answer result="Well">Answer2</answer>
+			</question>
+		</criterion>
+		<criterion name="CriterionName2" categorieLvl="VeryImportant">
+			<question>
+				<textQuestion categorieLvl="VaryImportant">Question3</textQuestion>
+				<answer result="NotBad">Answer3</answer>
+			</question>
+			<question>
+				<textQuestion categorieLvl="Critical">Question4</textQuestion>
+				<answer result="Bad">Answer4</answer>
+			</question>
+			<question>
+				<textQuestion categorieLvl="Minor">Question5</textQuestion>
+				<answer result="Terrible">Answer5</answer>
+			</question>
+		</criterion>
+	</title>
+</root>
